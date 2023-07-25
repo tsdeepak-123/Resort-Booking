@@ -1,10 +1,21 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserRoute from "./Routes/UserRoute";
+import adminRoute from "./Routes/AdminRoute";
+import partnerRoute from "./Routes/PartnerRoute";
 
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/*" element={<UserRoute/>} />
+          <Route path="/admin" element={<adminRoute />} />
+          <Route path="/partner" element={<partnerRoute />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
